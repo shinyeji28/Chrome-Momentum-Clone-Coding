@@ -1,25 +1,13 @@
 const h1 = document.querySelector("div.hello:first-child h1");
 function handleTitleClick(){
-    h1.style.color = "blue";
+    // const clickedClass = "clicked";
+    // if(h1.classList.contains(clickedClass)){
+    //     h1.classList.remove(clickedClass);
+    // } else {
+    //     h1.classList.add(clickedClass);
+    // }
+    h1.classList.toggle("clicked");  // 클래스 토글
 }
-function handleWindowResize(){
-    document.body.style.backgroundColor = "tomato";  // body, head. title handling
-}
-function handleWindowCopy(){
-    alert("copier!");
-}
-function handleWindowOffline(){
-    alert("SOS on WIFI");
-}
-function handleWindowOnline(){
-    alert("ALL GOOD");
-}
-// 아래 두개의 event는 같은 것임
-h1.addEventListener("click", handleTitleClick);// removeEventListener이 있음으로 이것을 더 선호
-h1.onclick = handleTitleClick;
 
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
-window.addEventListener("offline", handleWindowOffline);   //wifi event
-window.addEventListener("online", handleWindowOnline);
+h1.addEventListener("click", handleTitleClick);
 
